@@ -1,0 +1,58 @@
+﻿<Window x:Class="dsds.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dsds"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="150" />
+            <ColumnDefinition
+                Width="*" />
+        </Grid.ColumnDefinitions>
+        <!-- Grid Menu -->
+        <Grid Grid.Column="0" Background="Coral">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="50" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <!-- Title-->
+            <TextBlock Grid.Row="0"
+                Margin="20 10 10 10"
+                Text="My Title"
+                FontSize="20"
+                Foreground="White" />
+            <!-- List Menu-->
+            <ListView Grid.Row="1" SelectionChanged="ListView_SelectionChanged" x:Name="ListViewMenu">
+                <ListViewItem>
+                    <Grid>
+                        <TextBlock
+                            Text="! item" />
+                    </Grid>
+                </ListViewItem>
+                <ListViewItem>
+                    <Grid>
+                        <TextBlock
+                            Text="@ item" />
+                    </Grid>
+                </ListViewItem>
+                <ListViewItem>
+                    <Grid>
+                        <TextBlock
+                            Text="# item" />
+                    </Grid>
+                </ListViewItem>
+            </ListView>
+        </Grid>
+        <!-- MainFrame-->
+        <Frame
+            x:Name="MainFrame" NavigationUIVisibility="Hidden"
+            Grid.Column="1"
+            Margin="5" />
+    </Grid>
+</Window>
